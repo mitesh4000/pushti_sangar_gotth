@@ -217,3 +217,4 @@ client. Serve each `build` directory with your preferred static host and point
   `PORT=...` values in the `start` scripts of `client`/`adminpanel`, then update
   `REACT_APP_BASE_URL`/CORS settings as needed.
 # pushti_sangar_gotth
+# pushti_sangar_gotth
