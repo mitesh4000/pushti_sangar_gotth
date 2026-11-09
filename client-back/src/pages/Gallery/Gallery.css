@@ -1,0 +1,34 @@
+.galleryCard {
+  border: 1px solid gray;
+  padding: 13px;
+  border-radius: 7px;
+  margin: 20px 0px;
+}
+.titleLink {
+  padding: 10px 0px;
+}
+.team-section.sec-pad {
+  padding: 40px 0px;
+}
+.mb_50 {
+  margin-bottom: 50px;
+}
+.image {
+  height: 300px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.image img {
+  width: 100%;
+  transition: 0.5s all ease-in-out;
+  height: 330px;
+    width: auto;
+    max-height: 265px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.image:hover img {
+  transform: scale(1.3);
+}

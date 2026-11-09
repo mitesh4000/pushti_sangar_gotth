@@ -1,0 +1,36 @@
+.section-padding {
+    padding: 50px 0;
+}
+.banner-left-icon {
+    position: relative;
+    background: #F4F6FA;
+    padding: 15px 5px;
+    border-radius: 10px;
+    place-content: center;
+}
+.banner-left-icon .banner-icon {
+    max-width: 50px;
+    margin-right: 20px;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.banner-left-icon .banner-text h3 {
+    color: #242424;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.banner-left-icon .banner-text p {
+    margin-bottom: 0;
+    color: #adadad;
+}
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 5px;
+    color: #7E7E7E;
+}
+.banner-left-icon .banner-icon svg:hover{
+   transition: 0.2s;
+}

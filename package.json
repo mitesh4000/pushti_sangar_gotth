@@ -1,0 +1,33 @@
+{
+  "name": "pushti-shangar",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pusti Shangar monorepo: customer storefront, admin panel, and API server",
+  "workspaces": [
+    "client",
+    "adminpanel",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client,admin -c blue,green,magenta \"npm run dev:server\" \"npm run dev:client\" \"npm run dev:admin\"",
+    "dev:client": "npm --workspace client start",
+    "dev:admin": "npm --workspace adminpanel start",
+    "dev:server": "npm --workspace server run dev",
+    "start": "npm --workspace server start",
+    "build": "npm --workspace client run build && npm --workspace adminpanel run build && npm --workspace server run build",
+    "lint": "npm --workspace adminpanel run lint",
+    "db:migrate": "npm --workspace server run db:migrate",
+    "db:seed": "npm --workspace server run db:seed",
+    "db:reset": "npm --workspace server run db:reset",
+    "db:studio": "npm --workspace server run db:studio"
+  },
+  "devDependencies": {
+    "ajv": "^8.20.0",
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "react-refresh": "^0.11.0"
+  },
+  "engines": {
+    "node": ">=18.18"
+  }
+}

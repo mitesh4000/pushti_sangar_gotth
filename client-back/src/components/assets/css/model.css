@@ -1,0 +1,297 @@
+﻿/* Cart Model */
+
+body.modal-open {
+    overflow-y:scroll !important;
+        padding-right: 0 !important;
+}
+
+.modal-backdrop.show {
+    display: none;
+}
+
+a.cart-model {
+    cursor:pointer !important;
+}
+
+#cartView.modal.show {
+        padding-right: 0 !important;
+        z-index:9999999999999;
+}
+
+#cartView .modal-header {
+    padding: 10px 20px;
+    background-color: #7f0405;
+    color: #fff;
+}
+
+    #cartView .modal-header .modal-title {
+        font-size: 14px;
+        color: #fff;
+    }
+
+    #cartView .modal-header .close {
+        margin: 0;
+        padding: 0px 0 0;
+        line-height: 10px;
+        opacity: 1;
+        color: #fff;
+        font-size: 18px;
+    }
+
+    /*#cartView .order-details .order-table {
+            max-height: 280px;
+    overflow-y: auto;
+    height: 100%;
+    }*/
+
+    .table-height-scroll {
+               max-height: 180px;
+    overflow-y: auto;
+    height: 100%;
+    display: block;
+    }
+
+#cartView .order-details .order-table table tbody tr td {
+    padding: 10px;
+}
+
+    #cartView .order-details .order-table table tbody tr td p {
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+
+        #cartView .order-details .order-table table tbody tr td p.subtotal-amount {
+            font-weight: 600;
+        }
+
+#cartView .product-details-desc .product-add-to-cart .input-counter span {
+    line-height: 40px;
+}
+
+#cartView .product-details-desc .product-add-to-cart .input-counter input {
+    height: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 0;
+}
+
+#cartView .cart-buttons .shopping-coupon-code .form-control {
+    height: 42px;
+        font-size: 13px;
+}
+
+#cartView .cart-buttons .shopping-coupon-code button {
+    height: 42px;
+    line-height: 42px;
+    font-size: 12px;
+}
+
+#cartView .default-btn {
+        font-size: 12px;
+    padding: 11px 20px;
+}
+
+@media (min-width: 576px) {
+    #cartView .modal-dialog {
+        max-width: 400px;
+            margin: 0;
+    float: right;
+    right: 0;
+    }
+}
+
+
+/* End Cart Model */
+
+/* Login Register Model */
+
+
+#LoginRegister .modal-dialog {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+}
+@media(max-width: 768px) {
+#LoginRegister .modal-dialog {
+    min-height: calc(100vh - 20px);
+  }
+}
+
+.modal-open #LoginRegister.modal {
+    background-color: rgba(0, 0, 0, 0.71);
+}
+
+#LoginRegister .modal-body {
+    padding:0;
+}
+
+#LoginRegister .modal-content {
+        border-radius: 10px;
+}
+
+#LoginRegister .modal-body .lr-details {
+        padding: 30px 15px;
+}
+
+#LoginRegister .modal-body .lr-details h5 {
+            color: #838383 !important;
+    text-align: center;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    text-transform: none;
+    font-family: 'Raleway', sans-serif !important;
+    font-variant-caps: normal !important;
+}
+
+#LoginRegister button.close {
+    left: 10px;
+    position: absolute;
+opacity:1;
+    z-index: 99999;
+        color: #838383;
+}
+
+
+#LoginRegister .billing-details .form-group .form-control {
+        height: 50px;
+    outline: 0;
+        font-size: 12px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 0;
+    border: 1px solid #ced4da;
+    padding-left: 40px !important;
+    background-color: #f4f8f7;
+}
+
+#LoginRegister .billing-details .form-group {
+    position: relative;
+    margin-bottom: 17px;
+}
+
+#LoginRegister .billing-details .form-group span {
+        position: absolute;
+    top: 12px;
+    left: 10px;
+    font-size: 22px;
+}
+
+#LoginRegister .flex-col {
+    display: flex;
+    align-items: center;
+}
+
+#LoginRegister .img-part {
+    background-image:url(../img/home/login_pattern.jpg);
+}
+
+#LoginRegister .login-part .img-part {
+    border-radius: 0px 10px 10px 0px;
+}
+
+#LoginRegister .register-part .img-part {
+    border-radius: 10px 0px 0px 10px;
+}
+
+#LoginRegister .forgot-password-part .img-part {
+    border-radius: 0px 10px 10px 0px;
+}
+
+#LoginRegister .login-white-container {
+       text-align: center;
+    color: white;
+    padding: 20px 20px;
+    margin: 0 auto;
+}
+
+#LoginRegister .login-white-container h1 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff !important;
+        text-transform: none;
+}
+
+#LoginRegister .login-white-container p {
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff !important;
+}
+
+#LoginRegister .login-white-container .register {
+    float: none !important;
+}
+
+#LoginRegister .login-white-container .register a {
+    text-transform: uppercase !important;
+    background: #fff0 !important;
+    color: #fff !important;
+    display: inline-block !important;
+    padding: 15px 20px !important;
+    border-radius: 30px !important;
+    font-style: normal !important;
+    border: 2px solid #fff !important;
+    height: auto !important;
+    box-shadow: none !important;
+    width: 180px!important;
+    max-width: 230px !important;
+    font-size: 13px !important;
+    float: none !important;
+    margin-top: 20px;
+    color: #fff !important;
+    font-size: 13px !important;
+}
+
+#LoginRegister .register-part .billing-details .form-group .form-control {
+   height: 50px;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 0;
+    border: 0;
+    padding: .375rem .75rem;
+    background-color: #f4f8f7;
+}
+
+/* End Login Register Model */
+
+#Shipping_Address.modal {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#Shipping_Address .modal-header {
+        padding: 10px;
+}
+
+#Shipping_Address .modal-header h4.modal-title {
+            font-size: 17px;
+}
+
+#Billing_Address.modal {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#Billing_Address .modal-header {
+        padding: 10px;
+}
+
+#Billing_Address .modal-header h4.modal-title {
+            font-size: 17px;
+}
+
+
+#Shipping_Address .modal-dialog, #Billing_Address .modal-dialog {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+        overflow-x: hidden;
+}
+@media(max-width: 768px) {
+#Shipping_Address .modal-dialog, #Billing_Address .modal-dialog {
+    min-height: calc(100vh - 20px);
+  }
+}
+

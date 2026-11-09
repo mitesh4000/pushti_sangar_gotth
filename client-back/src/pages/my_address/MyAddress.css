@@ -1,0 +1,65 @@
+.billing-details.save-address {
+    padding: 13px;
+    background-color: #fff;
+    border-radius: 15px 0;
+    box-shadow: 0px 2px 4px 0px #00000026;
+    text-align: start;
+}
+.deafult-add {
+    float: right;
+    font-size: 14px;
+    background-color: #efefef;
+    padding: 5px 10px;
+}
+.billing-details.save-address p {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+.billing-details.save-address p a {
+    color: #7f0405;
+}
+.part-1{
+    margin-bottom: 3rem !important;
+}
+.my-desc .billing-details .form-group {
+    margin-bottom: 30px;
+}
+.billing-details .form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 13px;
+    font-weight: 400;
+}
+.my-desc .billing-details .form-group label {
+    font-weight: 600;
+}
+.my-desc .billing-details .form-group input, .my-desc .billing-details .form-group textarea {
+    background-color: transparent;
+}
+.my-desc .billing-details .form-group {
+    margin-bottom: 30px;
+}
+.nice-select:after {
+    border-bottom: 2px solid #999;
+    border-right: 2px solid #999;
+    content: '';
+    display: block;
+    height: 5px;
+    margin-top: -4px;
+    pointer-events: none;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    -webkit-transform-origin: 66% 66%;
+    -ms-transform-origin: 66% 66%;
+    transform-origin: 66% 66%;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    width: 5px;
+}
+.billing-details .form-group .nice-select:after {
+    right: 20px;
+}

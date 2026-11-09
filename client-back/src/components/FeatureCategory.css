@@ -1,0 +1,100 @@
+
+.f-title{
+    font-weight: 700;
+    font-size: 32px;
+    margin-right: 30px;
+}
+.card img{
+    border-radius: 10px;
+    display: inline-block;
+    /* max-width: 80px; */
+    height: 80px;
+    width: 80px;
+    transition: transform .5s;
+    text-align: center;
+
+
+
+}
+.card {
+    position: relative;
+    
+    text-align: center;
+    border: 1px solid #F4F6FA;
+    border-radius: 10px;
+    padding: 20px 0px 18px 0px;
+    margin-bottom: 45px;
+    align-items: center;
+    min-height: 193px;
+
+}
+.card img:hover {
+    transform: scale(1.1);
+    
+  }
+  .card:hover{
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #dfaaaa ;
+    transition: .2s;
+  }
+.next-arrow button{
+    position: absolute;
+    top: -51px;
+    left: -68px;
+    width: 40px;
+    height: 40px;
+    line-height: 44px;
+    font-size: 24px;
+    cursor: pointer;
+    background: #F2F3F4;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    display: block;
+    z-index: 100;
+    border-radius: 50%;
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    text-align: center;
+    line-height: 45px;
+    font-size: 16px;
+    color: #7E7E7E;
+    border: none;
+
+
+}
+.prev-arrow button{
+    position: absolute;
+    left: -134px;
+    top: -51px;
+    cursor: pointer;
+    background: #F2F3F4;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    display: block;
+    z-index: 100;
+    border-radius: 50%;
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    text-align: center;
+    line-height: 45px;
+    font-size: 16px;
+    color: #7E7E7E;
+    border: none;
+}
+.prev-arrow button:hover{
+    background-color: #dfaaaa;
+    color: #712005;
+    border-color: #dfaaaa;
+}
+.next-arrow button:hover{
+    background-color:#dfaaaa;
+    color: #712005;
+    border-color: #dfaaaa;
+}
+.card-body {
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    height: 75px;
+}

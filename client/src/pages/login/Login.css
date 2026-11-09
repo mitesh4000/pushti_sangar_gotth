@@ -1,0 +1,113 @@
+#LoginRegister .modal-dialog {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+}
+#LoginRegister .modal-content {
+    border-radius: 10px;
+}
+#LoginRegister .modal-body {
+    padding: 0;
+}
+#LoginRegister button.close {
+    left: 10px;
+    position: absolute;
+    opacity: 1;
+    z-index: 99999;
+    color: #838383;
+    background: none;
+    border: none;
+    font-size: 35px;
+    font-weight: bolder;
+}
+#LoginRegister .modal-body .lr-details {
+    padding: 30px 15px;
+}
+#LoginRegister .modal-body .lr-details h5 {
+    color: #838383 !important;
+    text-align: center;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    text-transform: none;
+    font-family: 'Raleway', sans-serif !important;
+    font-variant-caps: normal !important;
+}
+#LoginRegister .billing-details .form-group {
+    position: relative;
+    margin-bottom: 17px;
+}
+#LoginRegister .billing-details .form-group .form-control {
+    height: 50px;
+    outline: 0;
+    font-size: 12px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 0;
+    border: 1px solid #ced4da;
+ 
+    background-color: #f4f8f7;
+}
+#LoginRegister .billing-details .form-group span {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    font-size: 22px;
+}
+#LoginRegister .login-part .img-part {
+    border-radius: 0px 10px 10px 0px;
+}
+#LoginRegister .img-part {
+    /* background-image: url(file:///D:/L2/assets/img/home/login_pattern.jpg); */
+  background: #6f696f;
+}
+#LoginRegister .flex-col {
+    display: flex;
+    align-items: center;
+}
+#LoginRegister .login-white-container {
+    text-align: center;
+    color: white;
+    padding: 20px 20px;
+    margin: 0 auto;
+}
+#LoginRegister .login-white-container h1 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff !important;
+    text-transform: none;
+}
+#LoginRegister .login-white-container p {
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff !important;
+}
+#LoginRegister .login-white-container .register {
+    float: none !important;
+}
+#LoginRegister .login-white-container .register a {
+    text-transform: uppercase !important;
+    background: #fff0 !important;
+    color: #fff !important;
+    display: inline-block !important;
+    padding: 15px 20px !important;
+    border-radius: 30px !important;
+    font-style: normal !important;
+    border: 2px solid #fff !important;
+    height: auto !important;
+    box-shadow: none !important;
+    width: 180px!important;
+    max-width: 230px !important;
+    font-size: 13px ;
+    float: none !important;
+    margin-top: 20px;
+    color: #fff !important;
+  
+}
+.modal-open #LoginRegister.modal {
+    background-color: rgba(0, 0, 0, 0.71);
+}
+.login-input{
+    padding-left: 40px !important;
+}

@@ -1,0 +1,87 @@
+.widget-area .widget:first-child {
+    margin-top: 0;
+}
+.with-my {
+    background: #f6f0f0;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+.widget-area .widget {
+    margin-top: 35px;
+}
+.widget-area .widget .widget-title {
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+    position: relative;
+    font-size: 20px;
+}
+.widget-area .widget_categories ul {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+}
+.widget-area .widget_categories ul li:last-child {
+    margin-bottom: 0;
+    border: 0;
+}
+.widget-area .widget .widget-title::before {
+    content: '';
+    position: absolute;
+    background: #737373;
+    bottom: -1px;
+    left: 0;
+    width: 50px;
+    height: 1px;
+}
+.widget-area .widget_categories ul li {
+    position: relative;
+    margin-bottom: 3px;
+    color: #737373;
+    padding-left: 0;
+    padding: 10px;
+    border-bottom: 1px solid ;
+    text-transform: capitalize;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+.widget-area .widget_categories ul li a {
+    color: #1d1d1d;
+    display: block;
+}
+
+.my-desc .billing-details .form-group {
+    margin-bottom: 30px;
+}
+.my-desc .billing-details .form-group label {
+    font-weight: 600;
+}
+.billing-details .form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 13px;
+    font-weight: 400;
+}
+.billing-details .form-group label .required {
+    color: #7f0405;
+    font-size: 15px;
+}
+.my-desc {
+    padding: 20px;
+    background-color: #f6f0f0;
+    border-radius: 10px;
+}
+.my-desc h5 {
+    font-size: 17px;
+    margin-bottom: 0;
+}
+.widget-area .widget_categories ul li a:hover {
+    color: #7f0405;
+    letter-spacing: 1px;
+}
+.widget-area .widget {
+    margin-top: 35px;
+}

@@ -1,0 +1,16 @@
+.pr-30 {
+    padding-right: 30px !important;
+}
+.single-header {
+    margin-bottom: 30px;
+    text-align: start;
+}
+.single-content > ol {
+    list-style-type: decimal;
+    margin-bottom: 30px;
+    padding-left: 1em;
+    text-align: start;
+}
+.single-content > ol li:not(:last-child) {
+    margin-bottom: 16px;
+}

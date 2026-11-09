@@ -1,0 +1,80 @@
+.table-wishlist {
+    border: 0;
+}
+.shopping-summery table td, .shopping-summery table th, .shopping-summery table thead {
+    border: 0;
+}
+thead {
+    font-weight: 600;
+}
+.invoice-1 .invoice-info-buttom .table .invoice-1 .invoice-info-buttom .table tr, .table tr {
+    border: 1px solid #e9ecef;
+}
+.shopping-summery table thead th.start {
+    border-radius: 20px 0 0 20px;
+}
+.shopping-summery table thead th {
+    background-color: #ececec;
+    padding: 18px 0;
+    font-family: "Quicksand", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #253D4E;
+}
+.shopping-summery table > :not(caption) > * > * {
+    padding: 15px 0;
+}
+.pl-30 {
+    padding-left: 30px !important;
+}
+table thead > tr > th {
+    vertical-align: middle;
+    border-bottom: 0;
+}
+.shopping-summery table thead th.end {
+    border-radius: 0 20px 20px 0;
+}
+.pt-30 {
+    padding-top: 30px !important;
+}
+.pt-40 {
+    padding-top: 40px !important;
+}
+.shopping-summery table tbody tr img {
+    max-width: 120px;
+    border: 1px solid #ececec;
+    border-radius: 15px;
+}
+h6 {
+    font-size: 16px;
+}
+table td, table th {
+    padding: 10px 20px;
+    border: 1px solid #ececec;
+    vertical-align: middle;
+}
+.stock-status {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+}
+.stock-status.in-stock {
+    background: #DEF9EC;
+    color: #dfaaaa;
+}
+.product-des{
+    text-align: start;
+}
+a:hover {
+    color: #dfaaaa;
+    
+}
+.text-grand{
+    color: #dfaaaa;
+   
+}

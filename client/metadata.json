@@ -1,0 +1,8 @@
+{
+  "name": "Pushti Shangar",
+  "description": "E-commerce web application for Pushti Shangar divine attire and spiritual products.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

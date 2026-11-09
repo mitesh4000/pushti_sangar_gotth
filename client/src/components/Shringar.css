@@ -1,0 +1,5 @@
+.shringar{
+    background: url(../images/ShringarCover.jpg) no-repeat center bottom ;
+    filter: brightness(85%);
+    transform: scale(1,1);
+}

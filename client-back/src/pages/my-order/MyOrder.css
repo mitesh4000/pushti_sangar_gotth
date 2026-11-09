@@ -1,0 +1,11 @@
+.no-order {
+    border: 2px dashed #ccc;
+    padding: 20px;
+}
+.order-table .product-subtotal a i {
+    font-size: 18px;
+    color: #fff;
+    background-color: rgb(147 197 114);
+    padding: 5px;
+    border-radius: 5px;
+}

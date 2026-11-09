@@ -1,0 +1,70 @@
+.fi-rs-home {
+  font-size: 19px;
+  margin-right: 4px;
+}
+
+.homeLink:hover {
+  color: #93c572;
+}
+.rightIcon {
+  font-size: 20px;
+}
+.pt-50 {
+  padding-top: 50px;
+}
+.aboutTitle {
+  font-family: "Quicksand", sans-serif;
+  color: #253d4e;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  font-size: 40px;
+  text-align: start;
+}
+.border-radius-15 {
+  border-radius: 15px;
+}
+.title.style-3 {
+  /* background-image: url(../imgs/theme/wave.png); */
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  padding-bottom: 25px;
+}
+.mb-40 {
+  margin-bottom: 40px !important;
+}
+.featured-card {
+  padding: 50px 30px !important;
+  border-radius: 15px !important;
+  border: 1px solid #ececec !important;
+  background: #fff !important;
+  height: 400px;
+}
+.text-muted {
+  color: #b6b6b6;
+  text-align: start;
+}
+
+.aboutEcomarceSubTitle {
+  font-size: 48px;
+  text-align: start;
+  font-family: "Quicksand", sans-serif;
+  color: #253d4e;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 40px;
+}
+.aboutHistoryTitle {
+  margin-bottom: 30px !important;
+  font-size: 32px;
+  text-align: start;
+  color: #253d4e;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.about-icon{
+  position: relative;
+    background: #F4F6FA;
+    padding: 5px;
+    border-radius: 10px;
+}

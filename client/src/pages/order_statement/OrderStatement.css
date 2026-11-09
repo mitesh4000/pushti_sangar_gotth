@@ -1,0 +1,61 @@
+#printablediv .checkout-login {
+    font-size: 14px;
+    color: #484848;
+    padding: 13px 20px 12px;
+    border: 1px dashed #d4d4d4;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 28px;
+}
+.center-block {
+    display: block !important;
+    margin-right: auto;
+    margin-left: auto;
+}
+.invoice-address h4 {
+    color: #93c572;
+    text-align: start;
+}
+.print-order {
+    float: right;
+    font-size: 14px;
+    padding: 5px;
+    border: 1px dashed #93c572;
+    color: #93c572;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+.invoice-address p {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.order-ttl {
+    font-weight: 700;
+    margin-left: 0px;
+    margin-right: 14px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    font-size: 15px;
+}
+table.meta tr th, table.meta-2 tr th {
+    width: 30%;
+    font-size: 12px;
+    padding: 5px;
+    font-weight: bold;
+    text-align: start;
+}
+.description-p .product-name {
+    font-weight: 700;
+    color: #7f0405;
+    font-size: 13px;
+}
+table.meta-1 tr td p {
+    margin-bottom: 5px;
+    color: #484848;
+}
+table.meta-1 tr td p {
+    margin-bottom: 5px;
+    color: #484848;
+}

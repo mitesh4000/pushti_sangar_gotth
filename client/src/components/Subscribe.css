@@ -1,0 +1,61 @@
+.mb-15 {
+    margin-bottom: 15px !important;
+}
+.newsletter {
+    position: relative;
+}
+.newsletter .newsletter-inner {
+    background: url("../images/footer-banner.jpg") no-repeat center;
+    background-size: cover;
+    padding: 84px 78px;
+    clear: both;
+    display: table;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 230px;
+}
+.mb-20 {
+    margin-bottom: 20px !important;
+}
+h2 {
+    font-size: 40px;
+}
+.newsletter .newsletter-inner .newsletter-content p {
+    font-size: 18px;
+    font-family: "Quicksand", sans-serif;
+}
+.newsletter .newsletter-inner .newsletter-content form {
+    background-color: #fff;
+    max-width: 450px;
+    border-radius: 50px;
+    position: relative;
+    z-index: 4;
+}
+.newsletter .newsletter-inner .newsletter-content form input {
+    border: 0;
+    border-radius: 50px 0 0 50px;
+    padding-left: 71px;
+    background: url(https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-plane.png) no-repeat 25px center;
+}
+.newsletter .newsletter-inner .newsletter-content form button {
+    border: 0;
+    border-radius: 50px;
+    font-weight: 700;
+}
+button.submit, button[type='submit'] {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 15px 40px;
+    color: #434343;
+    border: none;
+    background-color: #dfaaaa;
+    border: 1px solid #dfaaaa ;
+    border-radius: 10px;
+}
+.newsletter .newsletter-inner img {
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+    max-width: 40%;
+}

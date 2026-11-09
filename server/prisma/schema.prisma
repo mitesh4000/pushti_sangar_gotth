@@ -1,0 +1,468 @@
+// Pusti Shangar relational schema (SQLite).
+// The original application used MongoDB/Mongoose. IDs are strings so the API
+// can keep returning the `_id` field expected by both React applications.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String     @id @default(cuid())
+  name      String
+  email     String     @unique
+  password  String
+  photo     String
+  active    Boolean    @default(true)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  roles     UserRole[]
+  tokens    Token[]
+}
+
+model Role {
+  id          String     @id @default(cuid())
+  role        String     @unique
+  permissions String     @default("[]")
+  users       UserRole[]
+}
+
+model UserRole {
+  id     String @id @default(cuid())
+  userId String
+  roleId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role   Role   @relation(fields: [roleId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, roleId])
+  @@index([roleId])
+}
+
+model Customer {
+  id             String         @id @default(cuid())
+  username       String
+  email          String         @unique
+  address        String         @default("[]")
+  phone          String?
+  password       String
+  paymentMethods String         @default("[]")
+  preferences    String         @default("{}")
+  active         Boolean        @default(true)
+  deleted        Boolean        @default(false)
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  cartItems      CartItem[]
+  wishlist       WishlistItem[]
+  orders         Order[]
+  carts          Cart[]
+  tokens         Token[]
+}
+
+model CartItem {
+  id         String   @id @default(cuid())
+  customerId String
+  productId  String
+  quantity   Int      @default(1)
+  tax        Float?
+  customer   Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  product    Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([customerId, productId])
+  @@index([productId])
+}
+
+model WishlistItem {
+  id         String   @id @default(cuid())
+  customerId String
+  productId  String
+  customer   Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  product    Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([customerId, productId])
+  @@index([productId])
+}
+
+model Product {
+  id                    String        @id @default(cuid())
+  name                  String?
+  description           String?
+  categoryId            String?
+  subCategoryId         String?
+  subSubCategoryId      String?
+  tags                  String        @default("[]")
+  pricesOriginal        Float?
+  pricesDiscounted      Float?
+  pricesCalculatedPrice Float?
+  imageGallery          String        @default("[]")
+  stockQuantity         Int?
+  hsnCode               String?
+  size                  String?
+  shippingCharge        Float?
+  material              String?
+  color                 String?
+  season                String?
+  gstId                 String?
+  sku                   String?
+  calculationOnWeight   Boolean       @default(false)
+  weightTypeId          String?
+  weight                Float?
+  laborCost             Float?
+  discountOnLaborCost   Float?
+  isActive              Boolean       @default(true)
+  isProductPopular      Boolean       @default(true)
+  isProductNew          Boolean       @default(true)
+  filters               String        @default("[]")
+  isVariant             Boolean       @default(false)
+  mainProductId         String?
+  productColor          String?
+  productSize           String?
+  otherVariations       String        @default("[]")
+  createdAt             DateTime      @default(now())
+  updatedAt             DateTime      @default(now())
+  category              Category?     @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  subCategory           SubCategory?  @relation(fields: [subCategoryId], references: [id], onDelete: SetNull)
+  subSubCategory        SubSubCategory? @relation(fields: [subSubCategoryId], references: [id], onDelete: SetNull)
+  gst                   Gst?          @relation(fields: [gstId], references: [id], onDelete: SetNull)
+  weightType            PriceUpdate?  @relation(fields: [weightTypeId], references: [id], onDelete: SetNull)
+  mainProduct           Product?      @relation("ProductVariants", fields: [mainProductId], references: [id], onDelete: SetNull)
+  variants              Product[]     @relation("ProductVariants")
+  orderItems            OrderItem[]
+  stockEntries          Stock[]
+  cartItems             CartItem[]
+  wishlistItems         WishlistItem[]
+  cartProducts          CartProduct[]
+
+  @@index([categoryId])
+  @@index([subCategoryId])
+  @@index([subSubCategoryId])
+  @@index([gstId])
+  @@index([mainProductId])
+  @@index([isActive])
+}
+
+model Category {
+  id               String            @id @default(cuid())
+  name             String?
+  image            String?
+  description      String?
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @default(now())
+  isDeleted        Boolean           @default(false)
+  isActive         Boolean           @default(true)
+  subCategories    SubCategory[]
+  subSubCategories SubSubCategory[]
+  products         Product[]
+
+  @@index([isDeleted, isActive])
+}
+
+model SubCategory {
+  id               String            @id @default(cuid())
+  name             String
+  categoryId       String?
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @default(now())
+  isDeleted        Boolean           @default(false)
+  isActive         Boolean           @default(true)
+  category         Category?         @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  subSubCategories SubSubCategory[]
+  products         Product[]
+
+  @@index([categoryId])
+  @@index([isDeleted, isActive])
+}
+
+model SubSubCategory {
+  id            String       @id @default(cuid())
+  name          String
+  categoryId    String?
+  subCategoryId String?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @default(now())
+  isDeleted     Boolean      @default(false)
+  isActive      Boolean      @default(true)
+  category      Category?    @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  subCategory   SubCategory? @relation(fields: [subCategoryId], references: [id], onDelete: SetNull)
+  products      Product[]
+
+  @@index([categoryId])
+  @@index([subCategoryId])
+  @@index([isDeleted, isActive])
+}
+
+model Gst {
+  id        String    @id @default(cuid())
+  gst       Float
+  sgst      Float?
+  cgst      Float?
+  igst      Float?
+  updatedAt DateTime  @default(now())
+  isDeleted Boolean   @default(false)
+  isActive  Boolean   @default(true)
+  products  Product[]
+
+  @@index([isDeleted, isActive])
+}
+
+model PriceUpdate {
+  id          String    @id @default(cuid())
+  productType String?
+  price       Float?
+  products    Product[]
+}
+
+model Color {
+  id        String   @id @default(cuid())
+  name      String?
+  createdAt DateTime @default(now())
+}
+
+model Material {
+  id        String   @id @default(cuid())
+  name      String?
+  createdAt DateTime @default(now())
+}
+
+model Season {
+  id        String   @id @default(cuid())
+  name      String?
+  createdAt DateTime @default(now())
+}
+
+model Size {
+  id   String @id @default(cuid())
+  size Int?
+}
+
+model Order {
+  id                  String    @id @default(cuid())
+  customerId          String?
+  FirstName           String?
+  LastName            String?
+  status              String    @default("pending")
+  totalAmount         Float?
+  billingAddress      String?
+  shippingAddress     String?
+  country             String?
+  isInvoiceGenrated   Boolean   @default(false)
+  invoiceNumber       String?
+  invoiceGenrationDate DateTime?
+  state               String?
+  city                String?
+  postCode            String?
+  paymentMethod       String    @default("COD")
+  couponId            String?
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @default(now())
+  customer            Customer? @relation(fields: [customerId], references: [id], onDelete: SetNull)
+  coupon              Coupon?   @relation(fields: [couponId], references: [id], onDelete: SetNull)
+  items               OrderItem[]
+
+  @@index([customerId])
+  @@index([couponId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model OrderItem {
+  id        String   @id @default(cuid())
+  orderId   String
+  productId String?
+  quantity  Int?
+  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product   Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+
+  @@index([orderId])
+  @@index([productId])
+}
+
+model Cart {
+  id               String        @id @default(cuid())
+  cartTotal        Float?
+  totalAfterDiscount Float?
+  orderedById      String?
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+  orderedBy        Customer?     @relation(fields: [orderedById], references: [id], onDelete: SetNull)
+  products         CartProduct[]
+
+  @@index([orderedById])
+}
+
+model CartProduct {
+  id        String  @id @default(cuid())
+  cartId    String
+  productId String?
+  count     Int?
+  cart      Cart    @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  product   Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+
+  @@index([cartId])
+  @@index([productId])
+}
+
+model Stock {
+  id                 String   @id @default(cuid())
+  productId          String?
+  name               String?
+  color              String?
+  size               String?
+  quantity           Int
+  currentPricePerUnit Float
+  date               DateTime?
+  product            Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+
+  @@index([productId])
+  @@index([date])
+}
+
+model Banner {
+  id          String   @id @default(cuid())
+  bannerTitle String?
+  image       String?
+  description String?
+  bannerType  String?
+  bannerText  String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+  isDeleted   Boolean  @default(false)
+  isActive    Boolean  @default(true)
+
+  @@index([isDeleted, isActive])
+}
+
+model BlogCategory {
+  id        String   @id @default(cuid())
+  name      String?
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime?
+  deletedAt DateTime?
+  blogs     Blog[]
+
+  @@index([active])
+}
+
+model Blog {
+  id             String        @id @default(cuid())
+  blogFeed       String
+  blogTitle      String
+  imagePath      String
+  description    String?
+  blogCategoryId String?
+  date           DateTime      @default(now())
+  blog           String
+  deleted        Boolean       @default(false)
+  active         Boolean       @default(true)
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime?
+  deletedAt      DateTime?
+  blogCategory   BlogCategory? @relation(fields: [blogCategoryId], references: [id], onDelete: SetNull)
+
+  @@index([blogCategoryId])
+  @@index([deleted, active])
+}
+
+model Contact {
+  id        String   @id @default(cuid())
+  name      String?
+  email     String   @unique
+  phone     String?
+  subject   String?
+  message   String?
+  createdAt DateTime @default(now())
+}
+
+model Content {
+  id          String    @id @default(cuid())
+  contentType String
+  content     String
+  deleted     Boolean   @default(false)
+  active      Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime?
+  deletedAt   DateTime?
+
+  @@index([contentType])
+  @@index([deleted, active])
+}
+
+model Coupon {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  type        String   @default("%")
+  description String?
+  start       DateTime?
+  expiry      DateTime?
+  discount    Float?
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  orders      Order[]
+
+  @@index([active])
+  @@index([expiry])
+}
+
+model GalleryCategory {
+  id                   String           @id @default(cuid())
+  gallaryCategoryTitle String
+  description          String
+  imagePath            String
+  deleted              Boolean          @default(false)
+  active               Boolean          @default(true)
+  createdAt            DateTime         @default(now())
+  updatedAt            DateTime?
+  deletedAt            DateTime?
+  items                GalleryDetails[]
+
+  @@index([deleted, active])
+}
+
+model GalleryDetails {
+  id               String           @id @default(cuid())
+  imageTitle       String
+  description      String
+  imagePath        String
+  galleryCategoryId String?
+  deleted          Boolean          @default(false)
+  active           Boolean          @default(true)
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime?
+  deletedAt        DateTime?
+  galleryCategory  GalleryCategory? @relation(fields: [galleryCategoryId], references: [id], onDelete: SetNull)
+
+  @@index([galleryCategoryId])
+  @@index([deleted, active])
+}
+
+model LatestInvoice {
+  id             String   @id
+  lattestInvoice Int      @default(0)
+  updatedAt      DateTime @default(now())
+}
+
+model Subscribe {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+}
+
+model Token {
+  id         String    @id @default(cuid())
+  userId     String?
+  customerId String?
+  token      String
+  createdAt  DateTime?
+  expiresAt  DateTime?
+  user       User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  customer   Customer? @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([customerId])
+  @@index([token, expiresAt])
+}
